@@ -24,7 +24,7 @@ class Magazine : public Item
        int getVolume();
        bool setVolume(int);
        
-       void printInfo();
+       virtual void printInfo();
        
     private:
         std::string publisher;

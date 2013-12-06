@@ -36,7 +36,7 @@ class Item
 
 		bool setType(std::string);
         
-        void printInfo();
+        virtual void printInfo();
 
 		//destructor
 		~Item();

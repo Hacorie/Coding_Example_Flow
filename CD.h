@@ -27,7 +27,7 @@ class CD : public Item
         std::string getLabel();
         bool setLabel(std::string);
         
-        void printInfo();
+        virtual void printInfo();
         
     private:
         std::string artist;

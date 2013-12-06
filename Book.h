@@ -27,7 +27,7 @@ class Book : public Item
         std::string getPublisher();
         bool setPublisher(std::string);
         
-        void printInfo();
+        virtual void printInfo();
     
     private:
         std::string author;

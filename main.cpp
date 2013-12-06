@@ -19,6 +19,8 @@ int main()
     Item item5("pewpew", 74.02);
     Item item6("pewpew", 74.02);
     
+    Book b;
+    Item *ip = &b;
 
     cart.addItem(&item);
     cart.addItem(&item2);
@@ -26,6 +28,7 @@ int main()
     cart.addItem(&item4);
     cart.addItem(&item5);
     cart.addItem(&item6);
+    cart.addItem(ip);
 
  
     cart.displayCart();
