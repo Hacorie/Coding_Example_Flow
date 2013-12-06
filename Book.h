@@ -5,13 +5,14 @@ File: Book.h
 Purpose:  Holds Book related methods and members
 */
 
+#include "Item.h"
 #include <string>
 
 class Book : public Item
 {
     public:
         Book();
-        Book(std::string n, double p, std::string t, std::string a, int p, std::string is, std::string pub);
+        Book(std::string n, double p, std::string a, int pl, std::string is, std::string pub);
         
         std::string getAuthor();
         bool setAuthor(std::string);

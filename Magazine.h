@@ -6,12 +6,13 @@ Purpose:  Holds Magazine related methods and members
 */
 
 #include <string>
+#include "Item.h"
 
 class Magazine : public Item
 {
     public:
         Magazine();
-        Magazine(std::string n, double p, std::string t, std::string p, int pc, int vol);
+        Magazine(std::string n, double p, std::string pub, int pc, int vol);
         
         std::string getPublisher();
         bool setPublisher(std::string);
