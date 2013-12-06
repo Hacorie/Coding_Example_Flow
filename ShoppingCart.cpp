@@ -20,10 +20,8 @@ void ShoppingCart::displayCart()
 {
 	for(int i = 0; i < cart.size(); i++)
 	{
-		std::cout << "Item Name: " << cart[i].getName() << std::endl <<
-			std::cout << "Item Price: "<< cart[i].getPrice()  << std::endl <<
-			std::cout << "Item Type: " << cart[i].getType() << std::endl << std::endl;
-	}
+            cart[i].printInfo();
+    }
 }
 
 //write the contents to of the shopping cart to a file. 

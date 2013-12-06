@@ -1,4 +1,5 @@
 #include "Item.h"
+#include <iostream>
 
 //default constructor
 Item::Item()
@@ -49,6 +50,13 @@ std::string Item::getType()
 bool Item::setType(std::string t)
 {
 	type = t;
+}
+
+void Item::printInfo()
+{
+    std::cout << "Item Name: " << name << std::endl <<
+			"Item Price: "<< price  << std::endl <<
+			"Item Type: " << type << std::endl << std::endl;
 }
 
 //destructor

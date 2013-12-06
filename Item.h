@@ -34,6 +34,8 @@ class Item
 		std::string getType();
 
 		bool setType(std::string);
+        
+        void printInfo();
 
 		//destructor
 		~Item();
