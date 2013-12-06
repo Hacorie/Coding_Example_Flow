@@ -47,5 +47,5 @@ void ShoppingCart::summarizeCart()
 //destructor of the shopping cart
 ShoppingCart::~ShoppingCart()
 {
-
+    
 }

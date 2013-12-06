@@ -56,5 +56,5 @@ void Magazine::printInfo()
 {
     std::cout << "Title: " << getName() << std::endl << "Price: " << getPrice() << std::endl <<
         "Type: " << getType() << std::endl << "Publisher: " << publisher << std::endl <<
-        "Page Count: " << pageCount << std::endl << "Volume: " << volume << std::endl;
+        "Page Count: " << pageCount << std::endl << "Volume: " << volume << std::endl << std::endl;
 }

@@ -70,5 +70,5 @@ void CD::printInfo()
     std::cout << "Title: " << getName() << std::endl << "Price: " << getPrice() << std::endl <<
         "Type: " << getType() << std::endl << "Artist: " << artist << std::endl <<
         "Release Year: " << releaseYear << std::endl << "Number of Disks: " << numDisks << std::endl <<
-        "Label: " << label << std::endl;
+        "Label: " << label << std::endl << std::endl;
 }
