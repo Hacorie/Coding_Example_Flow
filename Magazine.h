@@ -4,7 +4,8 @@ File: Book.h
 
 Purpose:  Holds Magazine related methods and members
 */
-
+#ifndef MAGAZINE_H
+#define MAGAZINE_H
 #include <string>
 #include "Item.h"
 
@@ -30,3 +31,4 @@ class Magazine : public Item
         int pageCount;
         int volume;
 };
+#endif

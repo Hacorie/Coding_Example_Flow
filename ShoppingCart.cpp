@@ -9,7 +9,7 @@ ShoppingCart::ShoppingCart()
 }
 
 //add a single item to the shopping cart
-bool ShoppingCart::addItem(Item &item)
+bool ShoppingCart::addItem(Item *item)
 {
 	cart.push_back(item);
 	return true;
@@ -20,7 +20,7 @@ void ShoppingCart::displayCart()
 {
 	for(int i = 0; i < cart.size(); i++)
 	{
-            cart[i].printInfo();
+            cart[i]->printInfo();
     }
 }
 
@@ -32,9 +32,9 @@ void ShoppingCart::writeCartToFile(std::string filename)
 	ofs.open(filename.c_str());
 	for(int i = 0; i < cart.size(); i++)
     {
-        ofs  << cart[i].getName() << std::endl <<
-	        ofs << cart[i].getPrice()  << std::endl <<
-		    ofs << cart[i].getType() << std::endl << std::endl;
+        ofs  << cart[i]->getName() << std::endl <<
+	        ofs << cart[i]->getPrice()  << std::endl <<
+		    ofs << cart[i]->getType() << std::endl << std::endl;
     }
 }
 

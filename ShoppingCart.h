@@ -5,6 +5,9 @@ File: ShoppingCart.h
 Purpose: Class that holds operation of all Shopping Cart operations.
 */
 
+#ifndef SHOPPINGCART_H
+#define SHOPPINGCART_H
+
 #include <vector>
 #include "Item.h"
 
@@ -15,7 +18,7 @@ class ShoppingCart
 		ShoppingCart();
 
 		//add a single item to the shopping cart
-		bool addItem(Item &item);
+		bool addItem(Item *item);
 
 		//display the contents of the shopping cart to the screen
 		void displayCart();
@@ -31,5 +34,6 @@ class ShoppingCart
 		~ShoppingCart();
 
 	private:
-		std::vector<Item> cart;
+		std::vector<Item *> cart;
 };
+#endif

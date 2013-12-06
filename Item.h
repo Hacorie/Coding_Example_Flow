@@ -6,7 +6,8 @@ Purpose:  Base class for all item types.
 				Holds methods and members that apply
 				to all Item types
 */
-
+#ifndef ITEM_H
+#define ITEM_H
 #include <string>
 
 class Item
@@ -45,3 +46,4 @@ class Item
 		double price;			//price of the item
 		std::string type;
 };
+#endif

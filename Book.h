@@ -4,7 +4,8 @@ File: Book.h
 
 Purpose:  Holds Book related methods and members
 */
-
+#ifndef BOOK_H
+#define BOOK_H
 #include "Item.h"
 #include <string>
 
@@ -34,3 +35,4 @@ class Book : public Item
         std::string isbn;
         std::string publisher;
 };
+#endif

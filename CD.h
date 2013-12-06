@@ -4,7 +4,8 @@ File: Book.h
 
 Purpose:  Holds CDrelated methods and members
 */
-
+#ifndef CD_H
+#define CD_H
 #include <string>
 #include "Item.h"
 
@@ -34,3 +35,4 @@ class CD : public Item
         int numDisks;
         std::string label;
  };
+ #endif
