@@ -1,7 +1,14 @@
+/*
+Author: Nathan Perry
+File: Item.cpp
+
+Purpose:  Implementation file for Item Class
+*/
+
 #include "Item.h"
 #include <iostream>
 
-//default constructor
+//Default constructor.
 Item::Item()
 {
 	name = "";
@@ -9,7 +16,7 @@ Item::Item()
 	type = "default item";
 }
 
-//constructor if provided data
+//Constructor if provided data.
 Item::Item(std::string n, double p)
 {
 	name = n;
@@ -17,50 +24,47 @@ Item::Item(std::string n, double p)
 	type = "unknown";
 }
 
-//get the name of the current item
+//Returns the name of the current item.
 std::string Item::getName()
 {
 	return name;
 }
 
-//set the name of the current item
+//Sets the name of the current item.
 bool Item::setName(std::string n)
 {
 	name = n;
 	return true;
 }
 
-//get the price of the current item
+//Returns the price of the current item.
 double Item::getPrice()
 {
 	return price;
 }
 
-//set the price of the current object
+//Sets the price of the current item.
 bool Item::setPrice(double p)
 {
 	price = p;
 }
 
+//Returns the type of the current item.
 std::string Item::getType()
 {
 	return type;
 }
 
+//Sets the type of the current item.
 bool Item::setType(std::string t)
 {
 	type = t;
 }
 
+//Prints all info about an item.
 void Item::printInfo(std::ostream& out)
 {
         out << "Item Name: " << name << std::endl <<
 			"Item Price: "<< price  << std::endl <<
 			"Item Type: " << type << std::endl << std::endl;
-}
-
-//destructor
-Item::~Item()
-{
-
 }

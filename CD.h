@@ -1,21 +1,25 @@
 /*
 Author: Nathan Perry
-File: Book.h
+File: CD.h
 
-Purpose:  Holds CDrelated methods and members
+Purpose:  Holds CD related methods and members
 */
 #ifndef CD_H
 #define CD_H
-#include <string>
+
 #include "Item.h"
+
+#include <string>
 #include <fstream>
 
 class CD : public Item
 {
     public:
+        //Constructors
         CD();
         CD(std::string n, double p, std::string a, int y, int num, std::string lab);
         
+        //Methods
         std::string getArtist();
         bool setArtist( std::string);
         
@@ -29,7 +33,8 @@ class CD : public Item
         bool setLabel(std::string);
         
         virtual void printInfo(std::ostream& out);
-        
+    
+    //Member Data
     private:
         std::string artist;
         int releaseYear;

@@ -39,9 +39,6 @@ class Item
         
         virtual void printInfo(std::ostream& out);
 
-		//destructor
-		~Item();
-
 	private:
 		std::string name;	//name of the item
 		double price;			//price of the item

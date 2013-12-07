@@ -15,23 +15,23 @@ Purpose: Class that holds operation of all Shopping Cart operations.
 class ShoppingCart
 {
 	public:
-		//default constructor
+		//Default constructor.
 		ShoppingCart();
 
-		//add a single item to the shopping cart
+		//Add a single item to the shopping cart.
 		bool addItem(Item *item);
 
-		//display the contents of the shopping cart to the screen
+		//Display the contents of the shopping cart to the screen.
 		void displayCart(std::ostream &out);
 
 
-		//print out a brief summary of cart to the screen
+		//Print out a brief summary of cart to the screen.
 		void summarizeCart();
 
-		//destructor of the shopping cart
+		//Destructor of the shopping cart.
 		~ShoppingCart();
 
 	private:
-		std::vector<Item *> cart;
+		std::vector<Item *> cart;   //shopping cart.
 };
 #endif

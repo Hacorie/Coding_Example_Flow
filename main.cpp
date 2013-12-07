@@ -1,4 +1,11 @@
-#include <iostream>
+/*
+Author: Nathan Perry
+File: main.cpp
+Platform built on: Debian (Linux).
+Compilation: g++ Book.cpp CD.cpp Item.cpp Magazine.cpp ShoppingCart.cpp main.cpp
+Run with: ./a.out
+
+*/
 
 #include "Book.h"
 #include "CD.h"
@@ -6,14 +13,9 @@
 
 #include "ShoppingCart.h"
 
+#include <iostream>
 #include <string>
 using namespace std;
-
-//TODO:
-/*
-    Print success messages after an item is added
-    finish method to summarize cart (count each type of item, total price)
-*/
 
 //Function Prototypes
 void Menu();
@@ -34,12 +36,6 @@ int main()
 {
 
     Menu();
-
-    //Book book("nomnom", 1234.44, "pewpew", 1234, "a343dfaadas", "adfadf");
-    //Item *ip = &book;
-    //cart.addItem(ip);
-     
-     //printCart();
 
     return 0;
 

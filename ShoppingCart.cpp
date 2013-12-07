@@ -2,45 +2,48 @@
 #include <iostream>
 #include <fstream>
 
-//default constructor
+//Default constructor.
 ShoppingCart::ShoppingCart()
 {
-	cart.clear();	//just in case :D
+	cart.clear();	//Just in case :D
 }
 
-//add a single item to the shopping cart
+//Add a single item to the shopping cart.
 bool ShoppingCart::addItem(Item *item)
 {
 	cart.push_back(item);
 	return true;
 }
 
-//display the contents of the shopping cart to the screen
+//Display the contents of the shopping cart to the screen.
 void ShoppingCart::displayCart(std::ostream& out)
 {
+    //Send out a simple line if the vector is empty.
     if(cart.size() == 0)
     {
         out << "You currently have no items in your cart." << std::endl << std::endl;
         return;
     }
+    
+    //Loop over vector and call print.
 	for(int i = 0; i < cart.size(); i++)
 	{
             cart[i]->printInfo(out);
     }
 }
 
-//print out a brief summary of cart to the screen
+//print out a brief summary of cart to the screen.
 void ShoppingCart::summarizeCart()
 {
-    //loop over vector
-    //add up total of books, mags, and cds individual and total count
-    //also add up prices
+    
+    //Set all the values of counters.
     int book = 0;
     int mag = 0;
     int cd = 0;
     int other = 0;
     double total = 0;
     
+    //Loop over entire vector and count the number of items.
     for(int i = 0; i < cart.size(); i++)
     {
         if(cart[i]->getType() == "Book")
@@ -51,11 +54,14 @@ void ShoppingCart::summarizeCart()
             mag++;
         else
             other++;
-            
+        
+        //Add up cost of all items
         total += cart[i]->getPrice();
     }
 	
-    std::cout << "The total number of items in your cart: " << book+mag+cd+other << std::endl;
+    //print out all the summary information.
+    std::cout << "The total number of items in your cart: " << book+mag+cd+other << std::endl << std::endl;
+    std::cout << "The Above total is broken up into parts below: " << std::endl;
     std::cout << "The total number of Books in your cart: " << book << std::endl;
     std::cout << "The total number of CDs in your cart: " << cd << std::endl;
     std::cout << "The total number of Magazines in your cart: " << mag << std::endl;
@@ -64,7 +70,7 @@ void ShoppingCart::summarizeCart()
     std::cout << "The total price of all these items combines is: " << total << std::endl;
 }
 
-//destructor of the shopping cart
+//Destructor of the shopping cart
 ShoppingCart::~ShoppingCart()
 {
     
