@@ -137,7 +137,7 @@ bool addItem()
             addItem();
     }
     
-
+    cout << endl << "Item was successfully added to your cart :D" << endl;
     
     return true;
     
