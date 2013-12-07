@@ -124,7 +124,6 @@ bool addItem()
     cout << "2. CD" << endl;;
     cout << "3. Magazine" << endl;;
     cout << "4. Other" << endl;
-    cout << "5. Menu" << endl;
     cout << "***************************************************************" << endl << endl;
 
     cout << "Please enter your choice here: ";
@@ -143,11 +142,8 @@ bool addItem()
             break;
         case 4:
             break;
-        case 5:
-            Menu();
-            break;
         default:
-            cout << "Please Enter a correct numeric value of 1-5: ";
+            cout << "Please Enter a correct numeric value of 1-4: ";
             addItem();
     }
     
@@ -155,7 +151,20 @@ bool addItem()
 
 bool addMultipleItems()
 {
-
+    char quit;
+    cout << "You will now have the ability to add multiple items to your cart." << endl;
+    cout << "Enter 'q' to quit where prompted. Otherwise, hit any key." << endl;
+    cin.get(quit);
+    
+    while(quit != 'q')
+    {
+        addItem();
+        
+        cout << "Enter 'q' to quit where prompted. Otherwise, hit any key." << endl;
+        cin.get(quit);
+    } 
+    
+    return true;
 }
 
 bool addBook()
