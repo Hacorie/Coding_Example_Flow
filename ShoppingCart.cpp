@@ -18,6 +18,11 @@ bool ShoppingCart::addItem(Item *item)
 //display the contents of the shopping cart to the screen
 void ShoppingCart::displayCart()
 {
+    if(cart.size() == 0)
+    {
+        std::cout << "You currently have no items in your cart." << std::endl << std::endl;
+        return;
+    }
 	for(int i = 0; i < cart.size(); i++)
 	{
             cart[i]->printInfo();
