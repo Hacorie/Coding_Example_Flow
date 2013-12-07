@@ -11,16 +11,8 @@ using namespace std;
 
 //TODO:
 /*
-    Make a simple Command Line UI with different choices
-        add multiple items
-        delete an item ((maybe))
-        summarize contents of cart
-
-    Add function to multiple items at a time
-    
-    //finish method to print to file
-    //finish method to summarize cart (count each type of item, total price)
-    //probably need to add in deletes
+    Print success messages after an item is added
+    finish method to summarize cart (count each type of item, total price)
 */
 
 //Function Prototypes
@@ -30,7 +22,6 @@ bool addBook();
 bool addCD();
 bool addMagazine();
 bool addMultipleItems();
-bool deleteItem();
 void printCart();
 void printCartToFile();
 void summarizeCart();
@@ -64,10 +55,9 @@ void Menu()
     cout << "Please enter a numeric option below." << endl << endl;
     cout << "1. Add an item to your shopping cart." << endl;;
     cout << "2. Add multiple items to your shopping cart." << endl;;
-    cout << "3. Delete an item from your shopping cart" << endl;;
-    cout << "4. Print the contents of your shopping cart to the screen." << endl;;
-    cout << "5. Print the contents of your shopping cart to a file." << endl;
-    cout << "6. Summarize the contents of your shopping cart." << endl;
+    cout << "3. Print the contents of your shopping cart to the screen." << endl;;
+    cout << "4. Print the contents of your shopping cart to a file." << endl;
+    cout << "5. Summarize the contents of your shopping cart." << endl;
     cout << "***************************************************************" << endl << endl;
 
     cout << "Please enter your choice here: ";
@@ -82,15 +72,12 @@ void Menu()
             addMultipleItems();
             break;
         case 3:
-            deleteItem();
-            break;
-        case 4:
             printCart();
             break;
-        case 5:
+        case 4:
             printCartToFile();
             break;
-        case 6:
+        case 5:
             summarizeCart();
             break;
         default:
@@ -100,7 +87,7 @@ void Menu()
     
     do
     {
-        cout << "Would you like to continue? (Please enter 'yes' or 'no' without quotation marks): ";
+        cout << endl << endl << "Would you like to continue? (Please enter 'yes' or 'no' without quotation marks): ";
         getline(cin, yesno);
     
         if(yesno == "yes")
@@ -285,10 +272,6 @@ bool addMagazine()
     return true;
 }
 
-bool deleteItem()
-{
-
-}
 
 void printCart()
 {
@@ -314,6 +297,8 @@ void printCartToFile()
 
 void summarizeCart()
 {
+    char trash;
+    cin.get(trash);
     cart.summarizeCart();
     return;
 }
