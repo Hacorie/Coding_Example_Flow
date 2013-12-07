@@ -8,6 +8,7 @@ Purpose:  Holds CDrelated methods and members
 #define CD_H
 #include <string>
 #include "Item.h"
+#include <fstream>
 
 class CD : public Item
 {
@@ -27,7 +28,7 @@ class CD : public Item
         std::string getLabel();
         bool setLabel(std::string);
         
-        virtual void printInfo();
+        virtual void printInfo(std::ostream& out);
         
     private:
         std::string artist;

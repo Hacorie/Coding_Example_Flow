@@ -9,6 +9,7 @@ Purpose: Class that holds operation of all Shopping Cart operations.
 #define SHOPPINGCART_H
 
 #include <vector>
+#include <fstream>
 #include "Item.h"
 
 class ShoppingCart
@@ -21,11 +22,8 @@ class ShoppingCart
 		bool addItem(Item *item);
 
 		//display the contents of the shopping cart to the screen
-		void displayCart();
+		void displayCart(std::ostream &out);
 
-		//write the contents to of the shopping cart to a file. 
-		//input: sting containing file name to write to
-		void writeCartToFile(std::string filename);
 
 		//print out a brief summary of cart to the screen
 		void summarizeCart();

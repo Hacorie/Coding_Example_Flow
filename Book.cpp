@@ -66,9 +66,9 @@ bool Book::setPublisher(std::string p)
     return true;
 }
 
-void Book::printInfo()
+void Book::printInfo(std::ostream& out)
 {
-    std::cout << "Title: " << getName() << std::endl << "Price: " << getPrice() << std::endl <<
+        out << "Title: " << getName() << std::endl << "Price: " << getPrice() << std::endl <<
         "Type: " << getType() << std::endl << "Author: " << author << std::endl <<
         "Page Length: " << pageLength << std::endl << "ISBN: " << isbn << std::endl <<
         "Publisher: " << publisher << std::endl << std::endl;

@@ -8,6 +8,7 @@ Purpose:  Holds Book related methods and members
 #define BOOK_H
 #include "Item.h"
 #include <string>
+#include <fstream>
 
 class Book : public Item
 {
@@ -27,7 +28,7 @@ class Book : public Item
         std::string getPublisher();
         bool setPublisher(std::string);
         
-        virtual void printInfo();
+        virtual void printInfo(std::ostream& out);
     
     private:
         std::string author;

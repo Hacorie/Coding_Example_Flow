@@ -52,9 +52,9 @@ bool Magazine::setVolume(int v)
     volume = v;
 }
 
-void Magazine::printInfo()
+void Magazine::printInfo(std::ostream& out)
 {
-    std::cout << "Title: " << getName() << std::endl << "Price: " << getPrice() << std::endl <<
+    out << "Title: " << getName() << std::endl << "Price: " << getPrice() << std::endl <<
         "Type: " << getType() << std::endl << "Publisher: " << publisher << std::endl <<
         "Page Count: " << pageCount << std::endl << "Volume: " << volume << std::endl << std::endl;
 }

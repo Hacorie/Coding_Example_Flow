@@ -16,30 +16,16 @@ bool ShoppingCart::addItem(Item *item)
 }
 
 //display the contents of the shopping cart to the screen
-void ShoppingCart::displayCart()
+void ShoppingCart::displayCart(std::ostream& out)
 {
     if(cart.size() == 0)
     {
-        std::cout << "You currently have no items in your cart." << std::endl << std::endl;
+        out << "You currently have no items in your cart." << std::endl << std::endl;
         return;
     }
 	for(int i = 0; i < cart.size(); i++)
 	{
-            cart[i]->printInfo();
-    }
-}
-
-//write the contents to of the shopping cart to a file. 
-//input: sting containing file name to write to
-void ShoppingCart::writeCartToFile(std::string filename)
-{
-	std::ofstream ofs;
-	ofs.open(filename.c_str());
-	for(int i = 0; i < cart.size(); i++)
-    {
-        ofs  << cart[i]->getName() << std::endl <<
-	        ofs << cart[i]->getPrice()  << std::endl <<
-		    ofs << cart[i]->getType() << std::endl << std::endl;
+            cart[i]->printInfo(out);
     }
 }
 

@@ -9,6 +9,7 @@ Purpose:  Base class for all item types.
 #ifndef ITEM_H
 #define ITEM_H
 #include <string>
+#include <fstream>
 
 class Item
 {
@@ -36,7 +37,7 @@ class Item
 
 		bool setType(std::string);
         
-        virtual void printInfo();
+        virtual void printInfo(std::ostream& out);
 
 		//destructor
 		~Item();

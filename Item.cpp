@@ -52,9 +52,9 @@ bool Item::setType(std::string t)
 	type = t;
 }
 
-void Item::printInfo()
+void Item::printInfo(std::ostream& out)
 {
-    std::cout << "Item Name: " << name << std::endl <<
+        out << "Item Name: " << name << std::endl <<
 			"Item Price: "<< price  << std::endl <<
 			"Item Type: " << type << std::endl << std::endl;
 }

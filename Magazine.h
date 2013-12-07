@@ -8,6 +8,7 @@ Purpose:  Holds Magazine related methods and members
 #define MAGAZINE_H
 #include <string>
 #include "Item.h"
+#include <fstream>
 
 class Magazine : public Item
 {
@@ -24,7 +25,7 @@ class Magazine : public Item
        int getVolume();
        bool setVolume(int);
        
-       virtual void printInfo();
+       virtual void printInfo(std::ostream& out);
        
     private:
         std::string publisher;

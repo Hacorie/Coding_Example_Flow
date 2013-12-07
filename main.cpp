@@ -11,16 +11,11 @@ using namespace std;
 
 //TODO:
 /*
-    Make a simple Command Line UI with differnet choices
-        add single item
+    Make a simple Command Line UI with different choices
         add multiple items
         delete an item ((maybe))
-        print shopping list to screen
-        print shopping list to file
         summarize contents of cart
 
-    Add function to add a single item
-    Add function to add different item types
     Add function to multiple items at a time
     
     //finish method to print to file
@@ -170,6 +165,7 @@ bool addBook()
     int pageLength;
     char trash;
     
+    cin.get(trash);
     cout << "Please enter the Book Title: ";
     getline(cin, title);
     cout << "Please enter the Author's Name: " ;
@@ -201,7 +197,8 @@ bool addCD()
     double price;
     int releaseYear, numDisks;
     char trash;
-
+    
+    cin.get(trash);
     cout << "Please enter the CD Title: ";
     cin >> title;
     cout << "Please enter the Artist Name: " ;
@@ -232,6 +229,7 @@ bool addMagazine()
     int pageCount, volume;
     char trash;
     
+    cin.get(trash);
     cout << "Please enter the Magazine Title: ";
     cin >> title;
     cout << "Please enter the Publisher Name: " ;
@@ -260,13 +258,24 @@ bool deleteItem()
 
 void printCart()
 {
-    cart.displayCart();
+    char trash;
+    cin.get(trash);
+    cart.displayCart(cout);
     return;
 }
 
 void printCartToFile()
 {
-    ;
+    char trash;
+    cin.get(trash);
+
+    string path;
+    cout << "Please input the file name you wish to save your Shopping Cart to." << endl;
+    cin >> path;
+    
+    ofstream outfile(path.c_str());
+    cart.displayCart(outfile);
+    return;
 }
 
 void summarizeCart()
