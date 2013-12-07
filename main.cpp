@@ -34,6 +34,7 @@ bool deleteItem();
 void printCart();
 void printCartToFile();
 void summarizeCart();
+bool addOther();
 
 //create a shopping cart
 ShoppingCart cart;
@@ -116,6 +117,7 @@ bool addItem()
 {
     //figure out what type of item the person wants to add.
     int choice;
+    char trash;
 
     
     cout << "***************************************************************" << endl;
@@ -141,11 +143,16 @@ bool addItem()
             addMagazine();
             break;
         case 4:
+            addOther();
             break;
         default:
             cout << "Please Enter a correct numeric value of 1-4: ";
             addItem();
     }
+    
+
+    
+    return true;
     
 }
 
@@ -164,6 +171,24 @@ bool addMultipleItems()
         cin.get(quit);
     } 
     
+    return true;
+}
+
+bool addOther()
+{
+    string title;
+    char trash;
+    double price;
+   
+    cin.get(trash);
+    cout << "Please enter the Product Name ";
+    getline(cin, title);
+    cout << "Please enter the Product Price: " ;
+    cin >> price;
+    cin.get(trash);
+    
+    Item * ip = new Item(title, price);
+    cart.addItem(ip) ;
     return true;
 }
 

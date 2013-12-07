@@ -14,7 +14,7 @@ Item::Item(std::string n, double p)
 {
 	name = n;
 	price = p;
-	type = "default item";
+	type = "unknown";
 }
 
 //get the name of the current item
