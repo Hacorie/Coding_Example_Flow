@@ -68,6 +68,7 @@ int CD::getDisks()
 bool CD::setDisks(int n)
 {
     numDisks = n;
+    return true;
 }
 
 //Returns the Record Label who produced the CD.
@@ -80,6 +81,7 @@ std::string CD::getLabel()
 bool CD::setLabel(std::string l)
 {
     label = l;
+    return true;
 }
 
 //Print all infomration about the CD.
