@@ -1,0 +1,31 @@
+2
+1
+Candide
+Voltaire
+0-14-303942-3
+Penguin
+11.00
+155
+
+2
+Stadium Arcadium
+Red Hot Chili Peppers
+Warner Bros
+9.99
+2006
+2
+
+3
+National Geographic
+National Geographic
+10.00
+56
+3
+
+4
+ShamWow!
+15.99
+q
+yes
+3
+no
