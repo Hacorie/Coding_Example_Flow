@@ -47,6 +47,7 @@ double Item::getPrice()
 bool Item::setPrice(double p)
 {
 	price = p;
+	return true;
 }
 
 //Returns the type of the current item.
@@ -59,6 +60,7 @@ std::string Item::getType()
 bool Item::setType(std::string t)
 {
 	type = t;
+	return true;
 }
 
 //Prints all info about an item.
