@@ -54,6 +54,7 @@ int Magazine::getPageCount()
 bool Magazine::setPageCount(int p)
 {
     pageCount = p;
+    return true;
 }
 
 //Returns the volume number of the current magazine.
@@ -66,6 +67,7 @@ int Magazine::getVolume()
 bool Magazine::setVolume(int v)
 {
     volume = v;
+    return true;
 }
 
 //Print all info about a magazine.
