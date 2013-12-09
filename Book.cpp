@@ -68,6 +68,7 @@ std::string Book::getISBN()
 bool Book::setISBN(std::string i)
 {
     isbn = i;
+    return true;
 }
 
 //Return the publisher of the book back to the user.
