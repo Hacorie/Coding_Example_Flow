@@ -20,6 +20,11 @@ Environment and Compilation:
 	* ./a.out
 * <h4>Recommended Run (pre-defined data by me)</h4>
 	* ./a.out < testdata.txt
+		* This tests out singlely adding items and print.
+	* ./a.out < testdata2.txt
+		* This tests multiple adding items at one time and print.
+	* ./a.out < testdata3.txt
+		* This tests is both above tests plus print to file and summarize and print to screen.
 
 Functionality:
 -------
