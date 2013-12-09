@@ -5,7 +5,7 @@ Platform built on: Debian (Linux).
 Compilation: g++ Book.cpp CD.cpp Item.cpp Magazine.cpp ShoppingCart.cpp main.cpp
 Run with: ./a.out
 
-*/
+ */
 
 #include "Book.h"
 #include "CD.h"
@@ -46,7 +46,7 @@ void Menu()
 {
     int choice;     //Whatever Menu Choice the user chooses.
     string yesno;   //for if they want to continue or not.
-    
+
     cout << "***************************************************************" << endl;
     cout << "Please enter a numeric option below." << endl << endl;
     cout << "1. Add an item to your shopping cart." << endl;;
@@ -59,7 +59,7 @@ void Menu()
     //Let the user choose.
     cout << "Please enter your choice here: ";
     cin >> choice;
-    
+
     //Depending on input, do what the Menu says
     switch(choice)
     {
@@ -82,13 +82,13 @@ void Menu()
             cout << "You entered an incorrect choice. Please choose again." << endl;
             Menu();
     }
-    
+
     //see if the user wants to continue or quit.
     do
     {
         cout << endl << endl << "Would you like to continue? (Please enter 'yes' or 'no' without quotation marks): ";
         getline(cin, yesno);
-    
+
         if(yesno == "yes")
             Menu();
         else if(yesno == "no")
@@ -96,7 +96,7 @@ void Menu()
         else
             cout << "You entered an incorrect input; Please enter 'yes' or 'no' only" << endl;
     } while (yesno != "yes" && yesno != "no"); //they only have two options of input
-    
+
 }
 
 //Add an item to the shopping cart.
@@ -117,7 +117,7 @@ bool addItem()
     //Save the users choice.
     cout << "Please enter your choice here: ";
     cin >> choice;
-    
+
     //Do What the menu says.
     switch(choice)
     {
@@ -137,12 +137,12 @@ bool addItem()
             cout << "Please Enter a correct numeric value of 1-4: ";
             addItem();
     }
-    
+
     //Print a confirmation message after the item is added.
     cout << endl << "Item was successfully added to your cart :D" << endl;
-    
+
     return true;
-    
+
 }
 
 //If the user wants to add multiple items in quick succession.
@@ -153,16 +153,16 @@ bool addMultipleItems()
     cout << "You will now have the ability to add multiple items to your cart." << endl;
     cout << "Enter 'q' to quit where prompted. Otherwise, hit any key." << endl;
     cin.get(quit); //get a single character.
-    
+
     //Add items until user hits 'q'.
     while(quit != 'q')
     {
         addItem();
-        
+
         cout << "Enter 'q' to quit where prompted. Otherwise, hit any key." << endl;
         cin.get(quit);
-    } 
-    
+    }
+
     return true;
 }
 
@@ -170,24 +170,24 @@ bool addMultipleItems()
 bool addOther()
 {
     //Item Variables
-    string title;   
+    string title;
     double price;
-    
+
     char trash;     //Throw away character.
     cin.get(trash);
-   
+
     //Get item info from user.
     cout << "Please enter the Product Name ";
     getline(cin, title);
     cout << "Please enter the Product Price: " ;
     cin >> price;
-    
+
     cin.get(trash);
-    
+
     //Add item to Shopping cart.
     Item * ip = new Item(title, price);
     cart.addItem(ip) ;
-    
+
     return true;
 }
 
@@ -198,10 +198,10 @@ bool addBook()
     string title, author, isbn, publisher;
     double price;
     int pageLength;
-    
+
     char trash;     //Throw away character.
     cin.get(trash);
-    
+
     //Get user input for fields.
     cout << "Please enter the Book Title: ";
     getline(cin, title);
@@ -215,17 +215,17 @@ bool addBook()
     cin >> price;
     cout << "Please enter the Page Length: ";
     cin >> pageLength;
-    
+
     cin.get(trash);
-    
+
     //Create a book object with the given info.
     Book *book = new Book(title, price, author, pageLength, isbn, publisher);
     Item *ip = new Item;
     ip = book;
-    
+
     //Push it to the cart.
     cart.addItem(ip) ;
-    
+
     return true;
 }
 
@@ -236,10 +236,10 @@ bool addCD()
     string title, artist, label;
     double price;
     int releaseYear, numDisks;
-    
+
     char trash;     //Throwaway character.
     cin.get(trash);
-    
+
     //Get user input for fields.
     cout << "Please enter the CD Title: ";
     cin >> title;
@@ -253,17 +253,17 @@ bool addCD()
     cin >> releaseYear;
     cout << "Please enter the Number of Disks: ";
     cin >> numDisks;
-    
+
     cin.get(trash);
-    
+
     //Create CD object with the given info.
     CD *cd = new CD(title, price, artist, releaseYear, numDisks, label);
     Item *ip = new Item;
     ip = cd;
-    
+
     //Store the CD in the shopping cart.
     cart.addItem(ip) ;
-    
+
     return true;
 }
 
@@ -274,10 +274,10 @@ bool addMagazine()
     string title, publisher;
     double price;
     int pageCount, volume;
-    
+
     char trash;     //Throw away character.
     cin.get(trash);
-    
+
     //Get user input for field.
     cout << "Please enter the Magazine Title: ";
     cin >> title;
@@ -290,15 +290,15 @@ bool addMagazine()
     cout << "Please enter the Volume Number: ";
     cin >> volume;
     cin.get(trash);
-    
+
     //Create Magazine object with the given info.
     Magazine *mag = new Magazine(title, price, publisher, pageCount, volume );
     Item *ip = new Item;
     ip = mag;
-    
+
     //Store the Magazine in the shopping cart
     cart.addItem(ip) ;
-    
+
     return true;
 }
 
@@ -307,7 +307,7 @@ void printCart()
 {
     char trash;     //Throw away character.
     cin.get(trash);
-    
+
     //Print the shopping cart.
     cart.displayCart(cout);
     return;
@@ -323,10 +323,10 @@ void printCartToFile()
     string path;
     cout << "Please input the file name you wish to save your Shopping Cart to." << endl;
     cin >> path;
-    
+
     //Create an output file stream.
     ofstream outfile(path.c_str());
-    
+
     //Pass the created stream to the displayCart function.
     cart.displayCart(outfile);
     return;
@@ -337,7 +337,7 @@ void summarizeCart()
 {
     char trash;     //Throw away character.
     cin.get(trash);
-    
+
     //Call the summarize method.
     cart.summarizeCart();
     return;

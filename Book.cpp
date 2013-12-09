@@ -19,10 +19,10 @@ Book::Book()
     isbn = "";
     publisher = "";
 }
- 
+
 //Constructor for a Book object initializing all values from input from user 
- Book::Book(std::string n, double p,  std::string a, int pl, std::string is, std::string pub)
- {
+Book::Book(std::string n, double p,  std::string a, int pl, std::string is, std::string pub)
+{
     setName(n);
     setPrice(p);
     setType("Book");
@@ -30,7 +30,7 @@ Book::Book()
     pageLength = pl;
     isbn = is;
     publisher = pub;
- }
+}
 
 //Return the author of this book to the user
 std::string Book::getAuthor()
@@ -87,7 +87,7 @@ bool Book::setPublisher(std::string p)
 //Print all information about the book.
 void Book::printInfo(std::ostream& out)
 {
-        out << "Title: " << getName() << std::endl << "Price: " << getPrice() << std::endl <<
+    out << "Title: " << getName() << std::endl << "Price: " << getPrice() << std::endl <<
         "Type: " << getType() << std::endl << "Author: " << author << std::endl <<
         "Page Length: " << pageLength << std::endl << "ISBN: " << isbn << std::endl <<
         "Publisher: " << publisher << std::endl << std::endl;

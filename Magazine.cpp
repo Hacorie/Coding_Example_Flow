@@ -3,7 +3,7 @@ Author: Nathan Perry
 File: Magazine.cpp
 
 Purpose:  Implementation file for the Magazine Class
-*/
+ */
 
 #include "Magazine.h"
 #include <iostream>
@@ -28,7 +28,7 @@ Magazine::Magazine(std::string n, double p, std::string pub, int pc, int vol)
     publisher = pub;
     pageCount = pc;
     volume = vol;
-    
+
 }
 
 //Returns the publisher of the current magazine.
