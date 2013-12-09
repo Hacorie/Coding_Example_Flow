@@ -121,7 +121,7 @@ bool addItem()
     //Do What the menu says.
     switch(choice)
     {
-        case 1: 
+        case 1:
             addBook();
             break;
         case 2:
@@ -242,11 +242,11 @@ bool addCD()
 
     //Get user input for fields.
     cout << "Please enter the CD Title: ";
-    cin >> title;
+    getline(cin, title);
     cout << "Please enter the Artist Name: " ;
-    cin >> artist;
+    getline(cin, artist);
     cout << "Please enter the Label Name: ";
-    cin >> label;
+    getline(cin, label);
     cout << "Please enter the Price: ";
     cin >> price;
     cout << "Please enter the Release Year: ";
@@ -280,9 +280,9 @@ bool addMagazine()
 
     //Get user input for field.
     cout << "Please enter the Magazine Title: ";
-    cin >> title;
+    getline(cin, title);
     cout << "Please enter the Publisher Name: " ;
-    cin >> publisher;
+    getline(cin,  publisher);
     cout << "Please enter the Price: ";
     cin >> price;
     cout << "Please enter the Page Count: ";
